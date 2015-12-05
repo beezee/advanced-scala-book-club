@@ -28,7 +28,7 @@ object DoubleDT {
   // can be selected at callsite by importing and assigning implicit
   val dblDt2 = new Doubleable[DateTime] {
     def double(a: DateTime) = {
-      val d = DateTime.now
+      val d = new DateTime(a.getMillis)
       d.plusHours(d.getHourOfDay)
     }
   }
@@ -51,9 +51,8 @@ object DoubleableProgram {
   import DoubleableInstances._
   import DoubleableSyntax._
 
-  implicit val dblDT = DoubleDT.dblDt
-
-  def originalsAndDoubles(i: Int, s: String, dt: DateTime): Unit = {
+  def originalsAndDoubles(i: Int, s: String, dt: DateTime)(
+                          implicit ev: Doubleable[DateTime]): Unit = {
     println((i, i.double))
     println((s, s.double))
     println((dt, dt.double))
