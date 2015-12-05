@@ -51,10 +51,13 @@ object DoubleableProgram {
   import DoubleableInstances._
   import DoubleableSyntax._
 
+  def originalAndDouble[A: Doubleable](a: A): Unit =
+    println((a, a.double))
+
   def originalsAndDoubles(i: Int, s: String, dt: DateTime)(
                           implicit ev: Doubleable[DateTime]): Unit = {
-    println((i, i.double))
-    println((s, s.double))
-    println((dt, dt.double))
+    originalAndDouble(i)
+    originalAndDouble(s)
+    originalAndDouble(dt)
   }
 }
