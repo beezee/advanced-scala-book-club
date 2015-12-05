@@ -6,7 +6,7 @@ You get the following benefits:
 *  Flexibility of a decorator (can enhance types you don't own)
 *  Injectible implementations
 
-Look at the programs in the files in this directory.
+Look at the Program objects at the bottom of each file in this directory.
 
 In the version that uses inheritance, you have a choice. Both options have
 some drawbacks.
