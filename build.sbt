@@ -4,10 +4,15 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
+resolvers ++= Seq(
+  "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
+)
+
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.2.4" % "test",
   "org.joda" % "joda-convert" % "1.2",
-  "joda-time" % "joda-time" % "latest.release"
+  "joda-time" % "joda-time" % "latest.release",
+  "org.scalaz" %% "scalaz-core" % "7.1.5"
 )
 
 scalacOptions ++= Seq(
