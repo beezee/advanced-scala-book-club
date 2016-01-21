@@ -18,6 +18,7 @@ object MonoidExample {
   def greedyOptionAppendIntM(o1: Option[Int], o2: Option[Int]): Option[Int] =
     o1 |+| o2
 
-  def greedyOptionAppendM[A: Monoid](o1: Option[A], o2: Option[A]): Option[A] =
+  def greedyOptionAppendM[A: Monoid](o1: Option[A], o2: Option[A]): Option[A] = {
     o1 |+| o2
+  }
 }
