@@ -57,6 +57,6 @@ respectively.)
 
 The ability to abstract control flow in a completely generic manner, defining
 essentially what happens _in between_ each line of code you write regardless
-of the actually steps you define in your program, is immensely powerful, and
-that is exactly what a Monad can give you.
+of the particular steps you actually define in your program, is immensely
+powerful, and that is exactly what a Monad can give you.
 
