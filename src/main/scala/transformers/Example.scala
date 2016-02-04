@@ -12,6 +12,9 @@ object LoggingEither {
   type Logger[A] = Writer[List[String], A]
   type LE[A] = EitherT[Logger, String, A]
 
+  // Logger[\/[String, Option[A]]] = ???
+  // Option[Logger[\/[String, A]]] = ???
+
   implicit class ToLEOps[A](wd: Logger[\/[String, A]]) {
     def lift: LE[A] = EitherT(wd)
   }
